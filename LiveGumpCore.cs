@@ -1,13 +1,14 @@
 /*
  * ModernUO Live Gump Framework v3.0
  * 
- * Event-driven real-time gump updates using packet 0xBF (Extended Commands).
+ * Real-time gump updates using packet 0xBF (Extended Commands).
  * Works with modified ClassicUO client.
  * 
- * Architecture:
- * - Game state changes fire events via TD_GameEvents
- * - TD_LiveGumpManager receives events and sends 0xBF packets
- * - Client updates only the changed elements
+ * Usage:
+ * - Inherit from LiveGump and override BuildGump()
+ * - Use AddLiveLabel/AddLiveImage to create updateable elements
+ * - Call UpdateText/UpdateHue to modify elements
+ * - Call Refresh() or use StartAutoRefresh() to send updates
  */
 
 using System;
